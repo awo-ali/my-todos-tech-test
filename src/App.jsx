@@ -16,21 +16,25 @@ const handleChange = (event) => {
 
 const handleSubmit = (event) => {
     event.preventDefault();
-    setTodos([...todos, userInput]) 
+    setTodos([...todos, {userInput, id:userInput.length+1}]) 
    userInput('')
 }
 
-const todoList = (userInput) => { return userInput.map((userInput) => (
-  <Note/>
+const todoList = (todos) => { return todos.map((todos) => (
+  <Note userInput={userInput} />
   ))
+
 };
+console.log(todos);
+console.log(userInput);
 
   return (
     <div className="app">
       <Header />
       <Form handleChange={handleChange} handleSubmit={handleSubmit}/>
-      <Note userInput={userInput} />
-   
+      <div className="notesContainer" >
+      {todoList(todos)}
+      </div>
       <p className="app__welcomeText">
         Nothing to see here yet ... Add a task in the field above!
       </p>
