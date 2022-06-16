@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./Form.scss";
 
 const Form = (props) => {
-  const { handleChange, handleSubmit } = props;
+  const { handleChange, handleSubmit, userInput } = props;
 
   /*const clearScreen = (event) => {
     if ({handleSubmit}) {
@@ -18,7 +18,8 @@ const Form = (props) => {
         <input
           type="text"
           placeholder="Add your task here ..."
-          name="{userInput}"
+          name="userInput"
+          value= {userInput}
           onChange={handleChange}
           className="form__input"
         />
