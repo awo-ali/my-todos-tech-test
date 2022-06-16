@@ -16,16 +16,16 @@ const handleChange = (event) => {
 
 const handleSubmit = (event) => {
     event.preventDefault();
-    setTodos([...todos, {userInput, id:userInput.length+1}]) 
-   userInput('')
-}
+    setTodos([...todos, {note:userInput, id:todos.length+1}]) 
+   
+};
 
 const todoList = (todos) => { return todos.map((todos) => (
-  <Note userInput={userInput} />
+  <Note todos={todos.note} />
   ))
-
+ 
 };
-console.log(todos);
+
 console.log(userInput);
 
   return (
